@@ -1,0 +1,4 @@
+node_modules
+.owl_cache
+Gemfile.lock
+yarn.lock
