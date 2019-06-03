@@ -4,10 +4,10 @@
   "dependencies": {
     "@material-ui/core": "^4.0.1",
     "opal-webpack-loader": "^0.8.8",
-    "react": "16.6",
-    "react-dom": "16.6",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-router": "5.0.0",
+    "react-router-dom": "5.0.0",
     "redux": "^4.0.1"
   },
   "scripts": {
