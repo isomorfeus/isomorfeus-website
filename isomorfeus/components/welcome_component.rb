@@ -1,7 +1,7 @@
 class WelcomeComponent < LucidComponent::Base
   render do
     H3 "Welcome to the Isomorfeus Framework"
-    DIV "For the moment see:"
+    DIV "Until we polished the website, for the moment see:"
     BR()
     A(href: 'https://github.com/isomorfeus/') { 'The Isomorfeus Framework at Github' }
     BR()
