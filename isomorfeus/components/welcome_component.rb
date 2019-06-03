@@ -10,6 +10,6 @@ class WelcomeComponent < LucidComponent::Base
     SPAN " or "
     A(href: 'https://gitter.im/isomorfeus/Lobby') { "our Gitter chat room" }
     BR()
-    DIV "------"
+    DIV "-------"
   end
 end
