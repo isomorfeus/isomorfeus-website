@@ -2,16 +2,12 @@ const path = require('path');
 const OwlResolver = require('opal-webpack-loader/resolver');
 const CompressionPlugin = require("compression-webpack-plugin"); // for gzipping the packs
 const WebpackAssetsManifest = require('webpack-assets-manifest');
-const TerserPlugin = require('terser-webpack-plugin');
 
 const common_config = {
     context: path.resolve(__dirname, '../isomorfeus'),
     mode: "production",
     optimization: {
-        minimize: true, // minimize
-        minimizer: [
-            new TerserPlugin({ cache: true })
-        ]
+        minimize: true // minimize
     },
     performance: {
         maxAssetSize: 20000000,
@@ -28,7 +24,7 @@ const common_config = {
         ]
     },
     plugins: [
-        new CompressionPlugin({ test: /^((?!application_ssr).)*$/, cache: true }), // gzip compress, exclude application_ssr.js
+        new CompressionPlugin({ test: /^((?!application_ssr).)*$/ }), // gzip compress, exclude application_ssr.js
         new WebpackAssetsManifest({ publicPath: true }) // generate manifest
     ],
     module: {
