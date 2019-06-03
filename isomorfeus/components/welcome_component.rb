@@ -9,5 +9,7 @@ class WelcomeComponent < LucidComponent::Base
     A(href: 'https://join.slack.com/t/isomorfeus/shared_invite/enQtNjQzMDMzMTM2ODIzLWU1ZDBlZmE2MjMxMmY1YmY4MmZiYzY5MTU0NTc3OTNhMTgzY2M2YWQwZGNhZDczMjlkNGMwZWI2YmRhMjkyZjY') { "Join our Isomorfeus Slack space" }
     SPAN " or "
     A(href: 'https://gitter.im/isomorfeus/Lobby') { "our Gitter chat room" }
+    BR()
+    DIV "-"
   end
 end
