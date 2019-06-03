@@ -3,9 +3,14 @@ import * as Redux from 'redux';
 global.Redux = Redux;
 import React from 'react';
 global.React = React;
-import * as ReactRouter from 'react-router';
-import * as ReactRouterDOM from 'react-router-dom';
-global.ReactRouter = ReactRouter;
-global.ReactRouterDOM = ReactRouterDOM;
+import { Link, NavLink, Route, Switch } from 'react-router-dom';
+// global.History = History;
+global.Link = Link;
+global.NavLink = NavLink;
+global.Route = Route;
+global.Switch = Switch;
+
+import * as Mui from '@material-ui/core';
+global.Mui = Mui;
 
 if (module.hot) { module.hot.accept(); }

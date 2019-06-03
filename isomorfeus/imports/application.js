@@ -5,13 +5,10 @@ import '../styles/application.css';
 // import npm modules that are valid to use only in the browser
 import ReactDOM from 'react-dom';
 global.ReactDOM = ReactDOM;
-import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 // global.History = History;
 global.BrowserRouter = BrowserRouter;
-global.Link = Link;
-global.NavLink = NavLink;
-global.Route = Route;
-global.Switch = Switch;
+
 // import modules common to browser and server side rendering (ssr)
 // environments from application_common.js
 import './application_common.js';

@@ -3,13 +3,9 @@
 // for example modules which depend on objects provided by node js
 import ReactDOMServer from 'react-dom/server';
 global.ReactDOMServer = ReactDOMServer;
-import { StaticRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
 // global.History = History;
 global.StaticRouter = StaticRouter;
-global.Link = Link;
-global.NavLink = NavLink;
-global.Route = Route;
-global.Switch = Switch;
 // import modules common to browser and server side rendering (ssr)
 // environments from application_common.js
 import './application_common.js';
