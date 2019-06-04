@@ -12,7 +12,7 @@ gem 'opal-webpack-loader', '~> 0.8.8'
 
 gem 'opal-autoloader', '~> 0.0.3'
 gem 'isomorfeus-redux', '~> 4.0.4'
-gem 'isomorfeus-speednode', '~> 0.2.5'
+gem 'isomorfeus-speednode', '~> 0.2.6'
 gem 'isomorfeus-react', '~> 16.6.7'
 
 #
