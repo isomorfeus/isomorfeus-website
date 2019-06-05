@@ -9,6 +9,9 @@ const common_config = {
     context: path.resolve(__dirname, '../isomorfeus'),
     mode: "development",
     optimization: {
+        removeAvailableModules: false,
+        removeEmptyChunks: false,
+        splitChunks: false,
         minimize: false // dont minimize for debugging
     },
     performance: {
