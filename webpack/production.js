@@ -1,13 +1,15 @@
 const path = require('path');
 const OwlResolver = require('opal-webpack-loader/resolver');
 const CompressionPlugin = require("compression-webpack-plugin"); // for gzipping the packs
+const TerserPlugin = require('terser-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 const common_config = {
     context: path.resolve(__dirname, '../isomorfeus'),
     mode: "production",
     optimization: {
-        minimize: true // minimize
+        minimize: true, // minimize
+        minimizer: [new TerserPlugin({ parallel: true, cache: true })]
     },
     performance: {
         maxAssetSize: 20000000,
@@ -24,8 +26,8 @@ const common_config = {
         ]
     },
     plugins: [
-        new CompressionPlugin({ test: /^((?!application_ssr).)*$/ }), // gzip compress, exclude application_ssr.js
-        new WebpackAssetsManifest({ publicPath: true }) // generate manifest
+        new CompressionPlugin({ test: /^((?!application_ssr).)*$/, cache: true }), // gzip compress
+        new WebpackAssetsManifest({ publicPath: true, merge: true }) // generate manifest
     ],
     module: {
         rules: [
@@ -66,7 +68,7 @@ const common_config = {
                 // opal-webpack-loader will compile and include ruby files in the pack
                 test: /.(rb|js.rb)$/,
                 use: [
-                    // { loader: "cache-loader" },
+                    { loader: "cache-loader" },
                     {
                         loader: 'opal-webpack-loader',
                         options: {
@@ -82,27 +84,21 @@ const common_config = {
 
 const browser_config = {
     target: 'web',
-    entry: {
-        application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')]
-    }
+    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')] }
 };
 
 const ssr_config = {
     target: 'node',
-    entry: {
-        application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')]
-    }
+    entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
 };
 
 const web_worker_config = {
     target: 'webworker',
-    entry: {
-        web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')]
-    }
+    entry: { web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')] }
 };
 
 const browser = Object.assign({}, common_config, browser_config);
 const ssr = Object.assign({}, common_config, ssr_config);
 const web_worker = Object.assign({}, common_config, web_worker_config);
 
-module.exports = [ browser, ssr ];
+module.exports = [ browser, ssr, web_worker ];
