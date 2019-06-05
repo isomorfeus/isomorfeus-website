@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.0.1",
-    "opal-webpack-loader": "^0.8.8",
+    "opal-webpack-loader": "^0.9.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router": "5.0.0",
@@ -13,7 +13,7 @@
   "scripts": {
     "debug": "webpack-dev-server --config=webpack/debug.js",
     "development": "webpack-dev-server --config=webpack/development.js",
-    "production_build": "webpack --config=webpack/production.js"
+    "production_build": "parallel-webpack --config=webpack/production.js --max-retries=1 --no-stats"
   },
   "devDependencies": {
     "cache-loader": "^3.0.0",
@@ -24,9 +24,11 @@
     "file-loader": "^1.1.11",
     "jsdom": "14.0.0",
     "node-sass": "^4.12.0",
+    "parallel-webpack": "^2.4.0",
     "puppeteer-core": "1.16.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.3.0",
     "webpack": "^4.30.0",
     "webpack-assets-manifest": "^3.1.1",
     "webpack-cli": "^3.3.0",
