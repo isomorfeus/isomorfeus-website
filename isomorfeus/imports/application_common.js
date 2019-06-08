@@ -11,6 +11,8 @@ global.Route = Route;
 global.Switch = Switch;
 
 import * as Mui from '@material-ui/core';
+import * as MuiStyles from '@material-ui/styles';
 global.Mui = Mui;
+global.MuiStyles = MuiStyles;
 
 if (module.hot) { module.hot.accept(); }

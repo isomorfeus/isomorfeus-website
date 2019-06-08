@@ -1,4 +1,4 @@
-class WelcomeComponent < LucidComponent::Base
+class WelcomeComponent < LucidMaterial::Component::Base
   render do
     H3 "Welcome to the Isomorfeus Framework"
     DIV "Until we polished the website please have a look at:"

@@ -1,4 +1,4 @@
-class IsomorfeusWebsiteApp < LucidApp::Base
+class IsomorfeusWebsiteApp < LucidMaterial::App::Base
   render do
     LucidRouter do
       Switch do
