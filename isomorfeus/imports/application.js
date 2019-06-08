@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 global.ReactDOM = ReactDOM;
 import { BrowserRouter } from 'react-router-dom';
 // global.History = History;
-global.BrowserRouter = BrowserRouter;
+global.Router = BrowserRouter;
 
 // import modules common to browser and server side rendering (ssr)
 // environments from application_common.js

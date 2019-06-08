@@ -1,6 +1,6 @@
 class IsomorfeusWebsiteApp < LucidMaterial::App::Base
   render do
-    LucidRouter do
+    Router do
       Switch do
         Route(path: '/', exact: true, component: WelcomeComponent.JS[:react_component])
       end
