@@ -11,9 +11,9 @@ gem 'opal-activesupport', github: 'janbiedermann/opal-activesupport', branch: 'r
 gem 'opal-webpack-loader', '>= 0.9.1'
 
 gem 'opal-autoloader', '~> 0.0.3'
-gem 'isomorfeus-redux', '~> 4.0.6'
+gem 'isomorfeus-redux', '~> 4.0.7'
 gem 'isomorfeus-speednode', '~> 0.2.7'
-gem 'isomorfeus-react', '~> 16.8.1'
+gem 'isomorfeus-react', '~> 16.8.2'
 
 #
 #
