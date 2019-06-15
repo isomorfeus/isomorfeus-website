@@ -2,3 +2,7 @@ node_modules
 Gemfile.lock
 yarn.lock
 /public/assets
+/vendor
+.idea
+.owl_cache
+yarn-error.log
