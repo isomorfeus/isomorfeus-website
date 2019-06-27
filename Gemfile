@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'puma', '~> 3.12.1', require: false
+gem 'iodine', '~> 0.7.32'
 gem 'foreman', require: false
 
 gem 'roda', '~> 3.19.0'
@@ -12,11 +12,10 @@ gem 'opal-webpack-loader', '>= 0.9.1'
 
 gem 'opal-autoloader', '~> 0.0.3'
 gem 'isomorfeus-redux', '~> 4.0.7'
-gem 'isomorfeus-speednode', '~> 0.2.7'
-gem 'isomorfeus-react', '~> 16.8.5'
+gem 'isomorfeus-speednode', '~> 0.2.9'
+gem 'isomorfeus-react', '~> 16.8.7'
+gem 'isomorfeus-transport', '~> 1.0.0.delta7'
 
-#
-#
 #gem 'isomorfeus-policy', '~> 1.0.0.delta5'
 #gem 'isomorfeus-operation', '~> 1.0.0.delta5'
 #gem 'isomorfeus-i18n', '~> 1.0.0.delta5'
@@ -27,5 +26,5 @@ end
 
 group :test do
   gem 'rspec', '~> 3.6.0'
-  gem 'isomorfeus-puppetmaster', '~> 0.2.7'
+  gem 'isomorfeus-puppetmaster', '~> 0.2.8'
 end
