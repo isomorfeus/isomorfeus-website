@@ -4,9 +4,11 @@ require_relative 'iodine_config'
 
 
 class IsomorfeusWebsiteApp < Roda
+  extend Isomorfeus::Transport::Middlewares
   include OpalWebpackLoader::ViewHelper
   include Isomorfeus::ReactViewHelper
 
+  use_isomorfeus_middlewares
   plugin :public, root: 'public'
 
   def page_content(location)
