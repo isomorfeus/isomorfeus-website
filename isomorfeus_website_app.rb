@@ -36,10 +36,6 @@ class IsomorfeusWebsiteApp < Roda
       r.public
     end
 
-    r.post 'trigger_update' do
-      'ok'
-    end
-
     r.get do
       page_content(env['PATH_INFO'])
     end
