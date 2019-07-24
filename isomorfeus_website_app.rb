@@ -41,7 +41,7 @@ class IsomorfeusWebsiteApp < Roda
     end
 
     r.get do
-      page_content(env['REQUEST_PATH'])
+      page_content(env['PATH_INFO'])
     end
   end
 end
