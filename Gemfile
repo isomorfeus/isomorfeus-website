@@ -4,17 +4,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'iodine', '~> 0.7.33'
 gem 'foreman', require: false
 
-gem 'roda', '~> 3.19.0'
+gem 'roda', '~> 3.22.0'
 
 gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
 gem 'opal-activesupport', github: 'janbiedermann/opal-activesupport', branch: 'relax'
-gem 'opal-webpack-loader', '>= 0.9.1'
+gem 'opal-webpack-loader', '>= 0.9.2'
 
-gem 'opal-autoloader', '~> 0.0.3'
+gem 'opal-autoloader', '~> 0.1.0'
 gem 'isomorfeus-redux', '~> 4.0.7'
-gem 'isomorfeus-speednode', '~> 0.2.9'
-gem 'isomorfeus-react', '~> 16.8.7'
-gem 'isomorfeus-transport', '~> 1.0.0.delta7'
+gem 'isomorfeus-speednode', '~> 0.2.10'
+gem 'isomorfeus-react', '~> 16.8.8'
+gem 'isomorfeus-transport', '~> 1.0.0.delta9'
 
 #gem 'isomorfeus-policy', '~> 1.0.0.delta5'
 #gem 'isomorfeus-operation', '~> 1.0.0.delta5'
@@ -25,6 +25,6 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '~> 3.6.0'
-  gem 'isomorfeus-puppetmaster', '~> 0.2.8'
+  gem 'rspec', '~> 3.8.0'
+  gem 'isomorfeus-puppetmaster', '~> 0.2.9'
 end
