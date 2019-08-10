@@ -45,10 +45,7 @@ const common_config = {
                 test: /.scss$/,
                 use: [
                     { loader: "cache-loader" },
-                    {
-                        loader: "style-loader",
-                        options: { hmr: true }
-                    },
+                    { loader: "style-loader" },
                     { loader: "css-loader" },
                     {
                         loader: "sass-loader",
@@ -61,10 +58,7 @@ const common_config = {
                 test: /.css$/,
                 use: [
                     { loader: "cache-loader" },
-                    {
-                        loader: "style-loader",
-                        options: { hmr: true }
-                    },
+                    { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
             },
