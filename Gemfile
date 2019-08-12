@@ -11,17 +11,19 @@ gem 'opal-activesupport', '~> 0.3.3'
 gem 'opal-webpack-loader', '>= 0.9.2'
 
 gem 'opal-autoloader', '~> 0.1.0'
-gem 'isomorfeus-redux', '~> 4.0.9'
+gem 'isomorfeus-redux', '~> 4.0.11'
 gem 'isomorfeus-speednode', '~> 0.2.10'
-gem 'isomorfeus-react', '>= 16.9.0'
-gem 'isomorfeus-transport', '~> 1.0.0.delta10'
-
+gem 'isomorfeus-react', '>= 16.9.2'
+gem 'isomorfeus-transport', '~> 1.0.0.delta11'
+gem 'isomorfeus-data', '~> 1.0.0.delta11'
+gem 'isomorfeus-i18n', '~> 1.0.0.delta11'
+gem 'isomorfeus-operation', '~> 1.0.0.delta11'
 #gem 'isomorfeus-policy', '~> 1.0.0.delta5'
-#gem 'isomorfeus-operation', '~> 1.0.0.delta5'
-#gem 'isomorfeus-i18n', '~> 1.0.0.delta5'
 
 group :development do
   gem 'auto_reloader'
+  gem 'debase', '>= 0.2.3.beta5'
+  gem 'ruby-debug-ide', '>= 0.7.0.beta7'
 end
 
 group :test do
