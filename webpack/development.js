@@ -123,7 +123,7 @@ const web_worker_config = {
 };
 
 const browser = Object.assign({}, common_config, browser_config);
-const ssr = Object.assign({}, common_config, ssr_config);
-const web_worker = Object.assign({}, common_config, web_worker_config);
+// const ssr = Object.assign({}, common_config, ssr_config);
+// const web_worker = Object.assign({}, common_config, web_worker_config);
 
 module.exports = [ browser ];
