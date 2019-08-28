@@ -34,7 +34,6 @@ const common_config = {
             {
                 test: /.scss$/,
                 use: [
-                    { loader: "cache-loader" },
                     { loader: "style-loader" },
                     {
                         loader: "css-loader",
@@ -55,17 +54,16 @@ const common_config = {
             {
                 // loader for .css files
                 test: /.css$/,
-                use: [ "cache-loader", "style-loader", "css-loader" ]
+                use: [ "style-loader", "css-loader" ]
             },
             {
                 test: /.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
-                use: [ "cache-loader", "file-loader" ]
+                use: [ "file-loader" ]
             },
             {
                 // opal-webpack-loader will compile and include ruby files in the pack
                 test: /.(rb|js.rb)$/,
                 use: [
-                    { loader: "cache-loader" },
                     {
                         loader: 'opal-webpack-loader',
                         options: {
