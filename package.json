@@ -18,7 +18,6 @@
     "production_build": "parallel-webpack --config=webpack/production.js --max-retries=1 --no-stats"
   },
   "devDependencies": {
-    "cache-loader": "^4.1.0",
     "compression-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "extra-watch-webpack-plugin": "^1.0.3",
