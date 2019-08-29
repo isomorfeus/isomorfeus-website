@@ -14,6 +14,19 @@ class WelcomeComponent < LucidMaterial::Component::Base
     SPAN " or "
     A(href: 'https://gitter.im/isomorfeus/Lobby') { "our Gitter chat room" }
     BR()
+    H4 "Getting started:"
+    PRE <<~TEXT
+      $ gem install isomorfeus-installer -v 1.0.0.zeta3
+      $ isomorfeus new my_project
+      $ cd my_project
+      $ foreman start
+    TEXT
+    P do
+      SPAN "Open browser at "
+      A(href: 'http://localhost:5000') { "http://localhost:5000" }
+      BR()
+      SPAN "Open editor, components are in my_project/isomorfeus/components, and start coding!"
+    end
     DIV "------------"
   end
 end
