@@ -16,7 +16,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
     BR()
     H4 "Getting started:"
     PRE <<~TEXT
-      $ gem install isomorfeus-installer -v 1.0.0.zeta4
+      $ gem install isomorfeus-installer -v 1.0.0.zeta5
       $ isomorfeus new my_project
       $ cd my_project
       $ foreman start
