@@ -28,9 +28,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
       BR()
       SPAN "Open editor, components are in my_project/isomorfeus/components, and start coding!"
       BR()
-      SPAN "(For foreman see "
-      A(href: 'https://github.com/ddollar/foreman') { 'https://github.com/ddollar/foreman' }
-      SPAN ".)"
+      SPAN "(For foreman: gem install foreman.)"
     end
     DIV "------------"
   end
