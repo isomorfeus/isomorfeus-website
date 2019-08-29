@@ -16,16 +16,21 @@ class WelcomeComponent < LucidMaterial::Component::Base
     BR()
     H4 "Getting started:"
     PRE <<~TEXT
-      $ gem install isomorfeus-installer -v 1.0.0.zeta3
+      $ gem install isomorfeus-installer -v 1.0.0.zeta4
       $ isomorfeus new my_project
       $ cd my_project
       $ foreman start
     TEXT
     P do
-      SPAN "Open browser at "
+      SPAN "Then open browser at "
       A(href: 'http://localhost:5000') { "http://localhost:5000" }
+      SPAN "."
       BR()
       SPAN "Open editor, components are in my_project/isomorfeus/components, and start coding!"
+      BR()
+      SPAN "(For foreman see "
+      A(href: 'https://github.com/ddollar/foreman') { 'https://github.com/ddollar/foreman' }
+      SPAN ".)"
     end
     DIV "------------"
   end
