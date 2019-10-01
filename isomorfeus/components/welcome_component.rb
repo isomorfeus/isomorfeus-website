@@ -13,16 +13,17 @@ class WelcomeComponent < LucidMaterial::Component::Base
     A(href: 'https://join.slack.com/t/isomorfeus/shared_invite/enQtNjQzMDMzMTM2ODIzLWU1ZDBlZmE2MjMxMmY1YmY4MmZiYzY5MTU0NTc3OTNhMTgzY2M2YWQwZGNhZDczMjlkNGMwZWI2YmRhMjkyZjY') { "Join our Isomorfeus Slack space" }
     SPAN " or "
     A(href: 'https://gitter.im/isomorfeus/Lobby') { "our Gitter space" }
+    BR()
     PRE <<~TEXT
       Available channels (mirrored):
       Slack                <---> Gitter
       ----------------------------------------------------------
       #arango_driver       <---> isomorfeus/arango_driver
-      #ci                  <---> isomorfeus/ci
+      #ci                  <---> isomorfeus/ci     (ci notifications)
       #opal_devtools       <---> isomorfeus/opal_devtools
       #opal_webpack_loader <---> isomorfeus/opal_webpack_loader
       #repo_notifications  <---> isomorfeus/repo_notifications
-      #ruby_framework      <---> isomorfeus/Lobby
+      #ruby_framework      <---> isomorfeus/Lobby  (main isomorfeus channel)
     TEXT
     BR()
     H4 "Getting started:"
