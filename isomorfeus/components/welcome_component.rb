@@ -12,7 +12,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
     BR()
     A(href: 'https://join.slack.com/t/isomorfeus/shared_invite/enQtNjQzMDMzMTM2ODIzLWU1ZDBlZmE2MjMxMmY1YmY4MmZiYzY5MTU0NTc3OTNhMTgzY2M2YWQwZGNhZDczMjlkNGMwZWI2YmRhMjkyZjY') { "Join our Isomorfeus Slack space" }
     SPAN " or "
-    A(href: 'https://gitter.im/isomorfeus/Lobby') { "our Gitter space" }
+    A(href: 'https://gitter.im/isomorfeus/') { "our Gitter space" }
     BR()
     PRE <<~TEXT
       Available channels (mirrored):
