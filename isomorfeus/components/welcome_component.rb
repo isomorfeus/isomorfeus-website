@@ -4,10 +4,13 @@ class WelcomeComponent < LucidMaterial::Component::Base
   end
 
   render do
-    H3(class_name: styles.heading) { "Welcome to the Isomorfeus Framework" }
+    H3(class_name: styles.heading) { "Welcome to the Isomorfeus Project" }
+    DIV "The powerful, isomorphic full stack Ruby web application development environment."
     DIV "Until we polished the website please have a look at:"
     BR()
-    A(href: 'https://github.com/isomorfeus/') { 'The Isomorfeus Framework at Github' }
+    A(href: 'https://github.com/isomorfeus/') { 'The Isomorfeus Project at Github' }
+    BR()
+    A(href: 'http://twitter.com/isomorfeus') { 'Follow the Isomorfeus Project on Twitter' }
     BR()
     BR()
     A(href: 'https://join.slack.com/t/isomorfeus/shared_invite/enQtNjQzMDMzMTM2ODIzLWU1ZDBlZmE2MjMxMmY1YmY4MmZiYzY5MTU0NTc3OTNhMTgzY2M2YWQwZGNhZDczMjlkNGMwZWI2YmRhMjkyZjY') { "Join our Isomorfeus Slack space" }
