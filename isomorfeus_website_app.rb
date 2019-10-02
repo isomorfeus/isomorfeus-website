@@ -18,7 +18,7 @@ class IsomorfeusWebsiteApp < Roda
     <<~HTML
       <html>
         <head>
-          <title>Isomorfeus Framework</title>
+          <title>The Isomorfeus Project</title>
           <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
           #{owl_script_tag 'application.js'}
         </head>
