@@ -6,14 +6,15 @@ gem 'foreman', require: false
 
 gem 'roda', '~> 3.22.0'
 
-gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
+# gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
+gem 'opal', path: '../opal'
 gem 'opal-activesupport', '~> 0.3.3'
-gem 'opal-webpack-loader', '>= 0.9.5'
+gem 'opal-webpack-loader', '>= 0.9.6'
 
 gem 'opal-autoloader', '~> 0.1.0'
 gem 'isomorfeus-redux', '~> 4.0.14'
 gem 'isomorfeus-speednode', '~> 0.2.10'
-gem 'isomorfeus-react', '>= 16.10.2'
+gem 'isomorfeus-react', '>= 16.10.4'
 gem 'isomorfeus-policy', '~> 1.0.0.zeta5'
 gem 'isomorfeus-transport', '~> 1.0.0.zeta5'
 gem 'isomorfeus-i18n', '~> 1.0.0.zeta5'
