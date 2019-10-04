@@ -6,8 +6,7 @@ gem 'foreman', require: false
 
 gem 'roda', '~> 3.22.0'
 
-# gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
-gem 'opal', path: '../opal'
+gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
 gem 'opal-activesupport', '~> 0.3.3'
 gem 'opal-webpack-loader', '>= 0.9.6'
 
