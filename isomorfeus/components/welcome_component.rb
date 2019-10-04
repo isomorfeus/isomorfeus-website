@@ -13,7 +13,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
     A(href: 'http://twitter.com/isomorfeus') { 'Follow the Isomorfeus Project on Twitter' }
     BR()
     BR()
-    A(href: 'https://join.slack.com/t/isomorfeus/shared_invite/enQtNjQzMDMzMTM2ODIzLWFkM2EwNTM1Yjk2YzE1Mzg1YTFhNWI1NzYxMDY1MTQ5ODZiMDg1MGRkMDA1NjM5ZWU4NjMwYTUyOTNhMTg5MzE') { "Join our Isomorfeus Slack space" }
+    A(href: 'https://join.slack.com/t/isomorfeus/shared_invite/enQtNjQzMDMzMTM2ODIzLWFkM2EwNTM1Yjk2YzE1Mzg1YTFhNWI1NzYxMDY1MTQ5ODZiMDg1MGRkMDA1NjM5ZWU4NjMwYTUyOTNhMTg5MzE', rel: "nofollow") { "Join our Isomorfeus Slack space" }
     SPAN " or "
     A(href: 'https://gitter.im/isomorfeus/') { "our Gitter space" }
     BR()
