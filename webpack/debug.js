@@ -43,7 +43,10 @@ const common_config = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
-        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] })
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new webpack.DefinePlugin({
+            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
+        })
     ],
     module: {
         rules: [
