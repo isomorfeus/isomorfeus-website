@@ -84,8 +84,8 @@ const browser_config = {
 };
 
 const browser_debug_guide_config = {
-    mode: "development",
-    devtool: 'source-map',
+    mode: "production",
+    devtool: 'inline-source-map',
     target: 'web',
     plugins: [
         new CompressionPlugin({ test: /^((?!application_ssr).)*$/, cache: true }), // gzip compress
