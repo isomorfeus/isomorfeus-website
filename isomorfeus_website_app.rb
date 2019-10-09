@@ -40,6 +40,21 @@ class IsomorfeusWebsiteApp < Roda
       r.public
     end
 
+    r.get 'debug_guide' do
+      <<~HTML
+      <html>
+        <head>
+          <title>The Isomorfeus Project</title>
+          <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
+          #{owl_script_tag 'application_debug_guide.js'}
+        </head>
+        <body>
+          <div data-iso-env="production" data-iso-root="IsomorfeusDebugGuideApp" data-iso-props="{}"></div>
+        </body>
+      </html>
+      HTML
+    end
+
     r.get do
       content = page_content(env, env['PATH_INFO'])
       response.status = ssr_response_status

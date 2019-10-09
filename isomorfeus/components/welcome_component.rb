@@ -34,6 +34,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
       $ gem install isomorfeus-installer -v 1.0.0.zeta5
       $ isomorfeus new my_project
       $ cd my_project
+      $ bundle install
       $ foreman start
     TEXT
     P do
@@ -45,6 +46,6 @@ class WelcomeComponent < LucidMaterial::Component::Base
       BR()
       SPAN "(For foreman: gem install foreman.)"
     end
-    DIV "------------"
+    DIV { A(href: "/debug_guide") { "Debug Guide" }}
   end
 end

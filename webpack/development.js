@@ -105,27 +105,27 @@ const common_config = {
 
 const browser_config = {
     target: 'web',
-    entry: {
-        application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')]
-    }
+    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')] }
 };
 
-const ssr_config = {
-    target: 'node',
-    entry: {
-        application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')]
-    }
+const browser_debug_guide_config = {
+    target: 'web',
+    entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] }
 };
 
-const web_worker_config = {
-    target: 'webworker',
-    entry: {
-        web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')]
-    }
-};
+// const ssr_config = {
+//     target: 'node',
+//     entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
+// };
+
+// const web_worker_config = {
+//     target: 'webworker',
+//     entry: { web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')] }
+// };
 
 const browser = Object.assign({}, common_config, browser_config);
+const browser_debug_guide = Object.assign({}, common_config, browser_debug_guide_config);
 // const ssr = Object.assign({}, common_config, ssr_config);
 // const web_worker = Object.assign({}, common_config, web_worker_config);
 
-module.exports = [ browser ];
+module.exports = [ browser, browser_debug_guide ];
