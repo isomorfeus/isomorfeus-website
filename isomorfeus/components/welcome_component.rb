@@ -46,6 +46,6 @@ class WelcomeComponent < LucidMaterial::Component::Base
       BR()
       SPAN "(For foreman: gem install foreman.)"
     end
-    DIV { A(href: "/debug_guide") { "Debug Guide" }}
+    DIV { A(href: "/debug_guide", rel: "nofollow") { "Debug Guide" }}
   end
 end
