@@ -6,7 +6,7 @@ class IsomorfeusDebugGuideApp < LucidMaterial::App::Base
   render do
     DIV do
       H3 "Isomorfeus Debug Guide"
-
+      H4 "Tools for debugging Isomorfeus on the Browser"
     end
   end
 end
