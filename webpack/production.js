@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const OwlResolver = require('opal-webpack-loader/resolver');
 const CompressionPlugin = require("compression-webpack-plugin"); // for gzipping the packs
 const TerserPlugin = require('terser-webpack-plugin');
