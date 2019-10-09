@@ -84,7 +84,7 @@ const browser_config = {
 };
 
 const browser_debug_guide_config = {
-    mode: "production",
+    mode: "development",
     devtool: 'inline-source-map',
     target: 'web',
     plugins: [
