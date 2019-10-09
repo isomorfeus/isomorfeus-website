@@ -105,7 +105,7 @@ const common_config = {
 
 const browser_config = {
     target: 'web',
-    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')] }
+    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application_debug.js')] }
 };
 
 const browser_debug_guide_config = {

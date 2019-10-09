@@ -1,4 +1,6 @@
 // entry file for the browser debugging environment
+import deepForceUpdate from 'react-deep-force-update'
+global.deepForceUpdate = deepForceUpdate;
 
 // import application.js
 import './application.js';
