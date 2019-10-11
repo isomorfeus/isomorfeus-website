@@ -1,10 +1,10 @@
-class DebuggingTools < LucidMaterial::Component::Base
+class DevelopmentTools < LucidMaterial::Component::Base
   styles do |theme|
     { heading: { color: theme.root.color }}
   end
 
   render do
-    H3(class_name: styles.heading) { "Tools for debugging Isomorfeus projects" }
+    H3(class_name: styles.heading) { "Tools for developing Isomorfeus projects" }
     H4 "Opal Developer Tools"
     P {
       A(href: 'https://addons.mozilla.org/en-US/firefox/addon/opaldevtools/') { "For Firefox from addons.mozilla.org" }

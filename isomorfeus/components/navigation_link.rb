@@ -3,7 +3,7 @@ class NavigationLinks < React::FunctionComponent::Base
     P do
       Link(to: '/') { 'Isomorfeus Home' }
       SPAN " | "
-      Link(to: '/debugging_tools') { 'Debugging Tools' }
+      Link(to: '/development_tools') { 'Development Tools' }
     end
   end
 end

@@ -47,7 +47,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
       SPAN "(For foreman: gem install foreman.)"
     end
     P do
-      SPAN "See available "; Link(to: '/debugging_tools') { 'Debugging Tools' }
+      SPAN "See available "; Link(to: '/development_tools') { 'Development Tools' }
     end
     P do
       SPAN { A(href: "/debug_guide", rel: "nofollow") { "A Debug Guide" }}
