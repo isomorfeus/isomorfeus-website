@@ -46,6 +46,13 @@ class WelcomeComponent < LucidMaterial::Component::Base
       BR()
       SPAN "(For foreman: gem install foreman.)"
     end
-    DIV { A(href: "/debug_guide", rel: "nofollow") { "Debug Guide" }}
+    P do
+      SPAN "See available "; Link(to: '/debugging_tools') { 'Debugging Tools' }
+    end
+    P do
+      SPAN { A(href: "/debug_guide", rel: "nofollow") { "A Debug Guide" }}
+      SPAN " (not finished yet, but good page to try all features of Opal Developer Tools) (Loads large assets, source maps, etc.)"
+    end
+    NavigationLinks()
   end
 end
