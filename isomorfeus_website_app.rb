@@ -16,6 +16,7 @@ class IsomorfeusWebsiteApp < Roda
     locale = Isomorfeus.locale unless locale
     rendered_tree = mount_component('IsomorfeusWebsiteApp', location_host: env['HTTP_HOST'], location: location, locale: locale)
     <<~HTML
+      <!DOCTYPE html>
       <html>
         <head>
           <title>The Isomorfeus Project</title>
@@ -42,16 +43,17 @@ class IsomorfeusWebsiteApp < Roda
 
     r.get 'debug_guide' do
       <<~HTML
-      <html>
-        <head>
-          <title>The Isomorfeus Project</title>
-          <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
-          #{owl_script_tag 'application_debug_guide.js'}
-        </head>
-        <body>
-          <div data-iso-env="production" data-iso-root="IsomorfeusDebugGuideApp" data-iso-props="{}"></div>
-        </body>
-      </html>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>The Isomorfeus Project</title>
+            <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
+            #{owl_script_tag 'application_debug_guide.js'}
+          </head>
+          <body>
+            <div data-iso-env="production" data-iso-root="IsomorfeusDebugGuideApp" data-iso-props="{}"></div>
+          </body>
+        </html>
       HTML
     end
 
