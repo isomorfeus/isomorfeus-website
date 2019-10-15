@@ -20,6 +20,7 @@ class IsomorfeusWebsiteApp < Roda
       <html>
         <head>
           <title>The Isomorfeus Project</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
           <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
           #{owl_script_tag 'application.js'}
         </head>
@@ -41,12 +42,17 @@ class IsomorfeusWebsiteApp < Roda
       r.public
     end
 
+    r.get 'robots.txt' do
+      r.public
+    end
+
     r.get 'debug_guide' do
       <<~HTML
         <!DOCTYPE html>
         <html>
           <head>
             <title>The Isomorfeus Project</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
             #{owl_script_tag 'application_debug_guide.js'}
           </head>
