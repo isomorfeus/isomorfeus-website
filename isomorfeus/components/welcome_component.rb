@@ -10,6 +10,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
     BR()
     A(href: 'https://github.com/isomorfeus/') { 'The Isomorfeus Project at Github' }
     BR()
+    BR()
     A(href: 'http://twitter.com/isomorfeus') { 'Follow the Isomorfeus Project on Twitter' }
     BR()
     BR()
