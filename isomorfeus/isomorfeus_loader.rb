@@ -9,10 +9,10 @@ require 'isomorfeus-i18n'
 require 'isomorfeus-data'
 require 'isomorfeus-operation'
 
-require_tree 'policies'
-require_tree 'channels'
-require_tree 'data'
-require_tree 'operations'
-require_tree 'components'
+require_tree 'policies', :autoload_dirskip
+require_tree 'channels', :autoload_dirskip
+require_tree 'data', :autoload_dirskip
+require_tree 'operations', :autoload_dirskip
+require_tree 'components', :autoload_dirskip
 
 Isomorfeus.start_app!

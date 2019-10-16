@@ -15,6 +15,6 @@ Opal::Autoloader.add_load_path('debug_guide_components')
 # require_tree 'channels'
 # require_tree 'data'
 # require_tree 'operations'
-require_tree 'debug_guide_components'
+require_tree 'debug_guide_components', :autoload_dirskip
 
 Isomorfeus.start_app!
