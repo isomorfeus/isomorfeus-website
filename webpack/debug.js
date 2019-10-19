@@ -136,12 +136,12 @@ const browser_debug_guide_config = {
     entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] }
 };
 
-// const ssr_config = {
-//     target: 'node',
-//     entry: {
-//         application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')]
-//     }
-// };
+const ssr_config = {
+    target: 'node',
+    entry: {
+        application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')]
+    }
+};
 
 // const web_worker_config = {
 //     target: 'webworker',
@@ -152,7 +152,7 @@ const browser_debug_guide_config = {
 
 const browser = Object.assign({}, common_config, browser_config);
 const browser_debug_guide = Object.assign({}, common_config, browser_debug_guide_config);
-// const ssr = Object.assign({}, common_config, ssr_config);
+const ssr = Object.assign({}, common_config, ssr_config);
 // const web_worker = Object.assign({}, common_config, web_worker_config);
 
-module.exports = [ browser, browser_debug_guide ];
+module.exports = [ browser, browser_debug_guide, ssr ];

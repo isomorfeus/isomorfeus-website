@@ -1,6 +1,12 @@
 class WelcomeComponent < LucidMaterial::Component::Base
+
   styles do |theme|
-    { heading: { color: theme.root.color }}
+    { heading: { color: theme.root.color },
+      logo: {
+        fontFamily: "Orbitron, sans-serif",
+        fontSize: '50px',
+        backgroundColor: theme.root.backgroundColor
+      }}
   end
 
   render do
@@ -48,7 +54,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
       SPAN "(For foreman: gem install foreman.)"
     end
     P do
-      SPAN "See available "; Link(to: '/development_tools') { 'Development Tools' }
+      SPAN "See available "; Link(to: '/guides/development_tools') { 'Development Tools' }
     end
     P do
       SPAN { A(href: "/debug_guide", rel: "nofollow") { "A Debug Guide" }}

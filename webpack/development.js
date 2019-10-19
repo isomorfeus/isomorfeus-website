@@ -10,7 +10,6 @@ const common_config = {
     optimization: {
         removeAvailableModules: false,
         removeEmptyChunks: false,
-        splitChunks: false,
         minimize: false // dont minimize in development, to speed up hot reloads
     },
     performance: {
@@ -29,16 +28,6 @@ const common_config = {
             new OwlResolver('resolve', 'resolved')
         ]
     },
-    plugins: [
-        // both for hot reloading
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        // watch for added files in opal dir
-        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
-        new webpack.DefinePlugin({
-            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
-        })
-    ],
     module: {
         rules: [
             {
@@ -105,18 +94,50 @@ const common_config = {
 
 const browser_config = {
     target: 'web',
+    plugins: [
+        // both for hot reloading
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        // watch for added files in opal dir
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new webpack.DefinePlugin({
+            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
+        })
+    ],
     entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application_debug.js')] }
 };
 
 const browser_debug_guide_config = {
     target: 'web',
+    plugins: [
+        // both for hot reloading
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        // watch for added files in opal dir
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new webpack.DefinePlugin({
+            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
+        })
+    ],
     entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] }
 };
 
-// const ssr_config = {
-//     target: 'node',
-//     entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
-// };
+const ssr_config = {
+    target: 'node',
+    plugins: [
+        // dont split ssr asset in chunks
+        new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
+        // both for hot reloading
+        // new webpack.NamedModulesPlugin(),
+        // new webpack.HotModuleReplacementPlugin(),
+        // watch for added files in opal dir
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new webpack.DefinePlugin({
+            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
+        })
+    ],
+    entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
+};
 
 // const web_worker_config = {
 //     target: 'webworker',
@@ -125,7 +146,7 @@ const browser_debug_guide_config = {
 
 const browser = Object.assign({}, common_config, browser_config);
 const browser_debug_guide = Object.assign({}, common_config, browser_debug_guide_config);
-// const ssr = Object.assign({}, common_config, ssr_config);
+const ssr = Object.assign({}, common_config, ssr_config);
 // const web_worker = Object.assign({}, common_config, web_worker_config);
 
-module.exports = [ browser, browser_debug_guide ];
+module.exports = [ browser, browser_debug_guide, ssr ];

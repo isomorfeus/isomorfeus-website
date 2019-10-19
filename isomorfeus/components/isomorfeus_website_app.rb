@@ -1,13 +1,15 @@
 class IsomorfeusWebsiteApp < LucidMaterial::App::Base
   theme do
-    { root: { color: :black }}
+    { root: { color: :black, backgroundColor: 'light-grey' }}
   end
 
   render do
     Router(location: props.location) do
       Switch do
         Route(path: '/', exact: true, component: WelcomeComponent.JS[:react_component])
-        Route(path: '/development_tools', exact: true, component: DevelopmentTools.JS[:react_component])
+        Route(path: '/guides', component: Guides.JS[:react_component])
+        Route(path: '/interactive_docs', exact: true, component: InteractiveDocs.JS[:react_component])
+        Route(path: '/api_docs', exact: true, component: ApiDocs.JS[:react_component])
         Route(component: NotFound404Component.JS[:react_component])
       end
     end

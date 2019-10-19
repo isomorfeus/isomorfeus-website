@@ -8,10 +8,6 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 const common_config = {
     context: path.resolve(__dirname, '../isomorfeus'),
     mode: "production",
-    optimization: {
-        minimize: true, // minimize
-        minimizer: [new TerserPlugin({ parallel: true, cache: true })]
-    },
     performance: {
         maxAssetSize: 20000000,
         maxEntrypointSize: 20000000
@@ -80,6 +76,11 @@ const common_config = {
 
 const browser_config = {
     target: 'web',
+    optimization: {
+        minimize: true, // minimize
+        minimizer: [new TerserPlugin({ parallel: true, cache: true })],
+        // splitChunks: { chunks: 'all' }
+    },
     entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')] }
 };
 
@@ -88,6 +89,10 @@ const browser_debug_guide_config = {
     optimization: { minimize: false },
     devtool: 'source-map',
     target: 'web',
+    optimization: {
+        minimize: true, // minimize
+        minimizer: [new TerserPlugin({ parallel: true, cache: true })]
+    },
     plugins: [
         new CompressionPlugin({ test: /^((?!application_ssr).)*$/, cache: true }), // gzip compress
         new WebpackAssetsManifest({ publicPath: true, merge: true }), // generate manifest
@@ -146,6 +151,10 @@ const browser_debug_guide_config = {
 
 const ssr_config = {
     target: 'node',
+    optimization: {
+        minimize: true, // minimize
+        minimizer: [new TerserPlugin({ parallel: true, cache: true })]
+    },
     entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
 };
 
