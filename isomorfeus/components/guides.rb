@@ -1,12 +1,14 @@
 class Guides < LucidMaterial::Component::Base
-  preload do
-    require_lazy('components/guides_loader').then do
-      self.class.state.preloaded = true
+  if on_browser?
+    preload do
+      require_lazy('components/guides_loader').then do
+        self.class.state.preloaded = true
+      end
     end
-  end
 
-  while_loading do
-    DIV 'Loading...'
+    while_loading do
+      DIV 'Loading...'
+    end
   end
 
   render do

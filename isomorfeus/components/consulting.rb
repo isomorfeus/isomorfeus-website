@@ -1,7 +1,13 @@
 class Consulting < LucidMaterial::Component::Base
-  preload do
-    require_lazy('components/consulting_loader').then do
-      self.class.state.preloaded = true
+  if on_browser?
+    preload do
+      require_lazy('components/consulting_loader').then do
+        self.class.state.preloaded = true
+      end
+    end
+
+    while_loading do
+      DIV 'Loading...'
     end
   end
 
@@ -11,7 +17,5 @@ class Consulting < LucidMaterial::Component::Base
     NavigationLinks()
   end
 
-  while_loading do
-    DIV 'Loading...'
-  end
+
 end

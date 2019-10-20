@@ -12,8 +12,8 @@ global.WebSocket = WebSocket;
 // environments from application_common.js
 import './application_common.js';
 
-import init_app from 'isomorfeus_loader.rb';
+import init_app from 'isomorfeus_ssr_loader.rb';
 init_app();
-global.Opal.load('isomorfeus_loader');
+global.Opal.load('isomorfeus_ssr_loader');
 
 if (module.hot) { module.hot.accept(); }
