@@ -78,7 +78,7 @@ const browser_config = {
     target: 'web',
     optimization: {
         minimize: true, // minimize
-        minimizer: [new TerserPlugin({ parallel: true, cache: true })],
+        minimizer: [new TerserPlugin({ parallel: true, cache: true, sourceMap: false, terserOptions: { output: { comments: false }}})],
         // splitChunks: { chunks: 'all' }
     },
     entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')] }
@@ -153,7 +153,7 @@ const ssr_config = {
     target: 'node',
     optimization: {
         minimize: true, // minimize
-        minimizer: [new TerserPlugin({ parallel: true, cache: true })]
+        minimizer: [new TerserPlugin({ parallel: true, cache: true, sourceMap: false, terserOptions: { output: { comments: false }}})]
     },
     entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
 };
