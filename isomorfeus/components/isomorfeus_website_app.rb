@@ -1,6 +1,6 @@
 class IsomorfeusWebsiteApp < LucidMaterial::App::Base
   theme do
-    { root: { color: :black, backgroundColor: 'light-grey' }}
+    { root: { color: :black }}
   end
 
   render do

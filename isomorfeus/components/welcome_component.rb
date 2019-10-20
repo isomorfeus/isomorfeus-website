@@ -1,12 +1,7 @@
 class WelcomeComponent < LucidMaterial::Component::Base
 
   styles do |theme|
-    { heading: { color: theme.root.color },
-      logo: {
-        fontFamily: "Orbitron, sans-serif",
-        fontSize: '50px',
-        backgroundColor: theme.root.backgroundColor
-      }}
+    { heading: { color: theme.root.color }}
   end
 
   render do
