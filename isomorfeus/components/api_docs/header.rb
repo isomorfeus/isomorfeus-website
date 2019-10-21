@@ -1,4 +1,4 @@
-class ApiDocs
+class ApiDocs < LucidMaterial::Component::Base
   class Header < LucidMaterial::Component::Base
     render do
       DIV "Api Docs"

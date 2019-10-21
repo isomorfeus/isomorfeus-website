@@ -1,14 +1,12 @@
 class InteractiveDocs < LucidMaterial::Component::Base
-  if on_browser?
-    preload do
-      require_lazy('components/interactive_docs_loader').then do
-        self.class.state.preloaded = true
-      end
+  preload do
+    require_lazy('components/interactive_docs_loader').then do
+      self.class.state.preloaded = true
     end
+  end
 
-    while_loading do
-      DIV 'Loading...'
-    end
+  while_loading :except_ssr do
+    DIV 'Loading...'
   end
 
   render do

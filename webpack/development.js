@@ -16,6 +16,7 @@ const common_config = {
         maxAssetSize: 20000000,
         maxEntrypointSize: 20000000
     },
+    devtool: false,
     output: {
         // webpack-dev-server keeps the output in memory
         filename: '[name].js',
@@ -76,6 +77,7 @@ const common_config = {
         inline: true,
         https: false,
         disableHostCheck: true,
+        publicPath: 'http://localhost:3035/assets/',
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -88,15 +90,15 @@ const common_config = {
             ignored: /\bnode_modules\b/
         },
         contentBase: path.resolve(__dirname, 'public'),
-        useLocalIp: false
+        useLocalIp: false,
+        stats: 'errors-only'
     }
 };
 
 const browser_config = {
     target: 'web',
     plugins: [
-        // both for hot reloading
-        new webpack.NamedModulesPlugin(),
+        // hot reloading
         new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
         new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
@@ -110,8 +112,7 @@ const browser_config = {
 const browser_debug_guide_config = {
     target: 'web',
     plugins: [
-        // both for hot reloading
-        new webpack.NamedModulesPlugin(),
+        // hot reloading
         new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
         new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
@@ -127,8 +128,7 @@ const ssr_config = {
     plugins: [
         // dont split ssr asset in chunks
         new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
-        // both for hot reloading
-        // new webpack.NamedModulesPlugin(),
+        // hot reloading
         // new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
         new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),

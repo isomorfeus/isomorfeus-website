@@ -17,24 +17,4 @@ require_tree 'operations', :autoload_dirskip
 # autoload shared components
 require_tree 'components', :autoload_dirskip
 
-# require top level components directly
-
-# require 'components/not_found_404_component'
-# require 'components/navigation_links'
-#
-# # docs
-# require 'components/guides'
-# require 'components/api_docs'
-# require 'components/interactive_docs'
-#
-# # commercial
-# require 'components/consulting'
-# require 'components/professional'
-# require 'components/enterprise'
-#
-# # first page
-# require 'components/welcome_component'
-#
-# require 'components/isomorfeus_website_app'
-
 Isomorfeus.start_app!

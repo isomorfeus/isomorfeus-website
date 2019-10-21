@@ -10,7 +10,6 @@ const common_config = {
     optimization: {
         removeAvailableModules: false,
         removeEmptyChunks: false,
-        splitChunks: false,
         minimize: false // dont minimize for debugging
     },
     performance: {
@@ -18,10 +17,6 @@ const common_config = {
         maxEntrypointSize: 20000000
     },
     // use one of these below for source maps
-    devtool: 'source-map', // this works well, good compromise between accuracy and performance
-    // devtool: 'cheap-eval-source-map', // less accurate
-    // devtool: 'inline-source-map', // slowest
-    // devtool: 'inline-cheap-source-map',
     output: {
         // webpack-dev-server keeps the output in memory
         filename: '[name].js',
@@ -32,15 +27,43 @@ const common_config = {
         plugins: [
             // this makes it possible for webpack to find ruby files
             new OwlResolver('resolve', 'resolved')
-        ],
-        alias: {
-            'react-dom': 'react-dom/profiling',
-            'schedule/tracing': 'schedule/tracing-profiling',
-        }
+        ]
     },
+    // configuration for webpack-dev-server
+    devServer: {
+        open: false,
+        lazy: false,
+        port: 3035,
+        hot: true,
+        // hotOnly: true,
+        inline: true,
+        https: false,
+        disableHostCheck: true,
+        publicPath: 'http://localhost:3035/assets/',
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+        },
+        watchOptions: {
+            // in case of problems with hot reloading uncomment the following two lines:
+            // aggregateTimeout: 250,
+            // poll: 50,
+            ignored: /\bnode_modules\b/
+        },
+        contentBase: path.resolve(__dirname, 'public'),
+        useLocalIp: false
+    }
+};
+
+const common_browser_config = {
+    target: 'web',
+    devtool: 'source-map', // this works well, good compromise between accuracy and performance
+    // devtool: 'cheap-eval-source-map', // less accurate
+    // devtool: 'inline-source-map', // slowest
+    // devtool: 'inline-cheap-source-map',
     plugins: [
-        // both for hot reloading
-        new webpack.NamedModulesPlugin(),
+        // hot reloading
         new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
         new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
@@ -64,7 +87,7 @@ const common_config = {
                         loader: "sass-loader",
                         options: {
                             includePaths: [path.resolve(__dirname, '../isomorfeus/styles')],
-                            sourceMap: true // set to false to speed up hot reloads
+                            sourceMap: true
                         }
                     }
                 ]
@@ -99,47 +122,82 @@ const common_config = {
                 ]
             }
         ]
-    },
-    // configuration for webpack-dev-server
-    devServer: {
-        open: false,
-        lazy: false,
-        port: 3035,
-        hot: true,
-        // hotOnly: true,
-        inline: true,
-        https: false,
-        disableHostCheck: true,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-        },
-        watchOptions: {
-            // in case of problems with hot reloading uncomment the following two lines:
-            // aggregateTimeout: 250,
-            // poll: 50,
-            ignored: /\bnode_modules\b/
-        },
-        contentBase: path.resolve(__dirname, 'public'),
-        useLocalIp: false
     }
 };
 
 const browser_config = {
-    target: 'web',
-    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application_debug.js')] }
+    entry: {application: [path.resolve(__dirname, '../isomorfeus/imports/application_debug.js')]}
 };
 
 const browser_debug_guide_config = {
-    target: 'web',
     entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] }
 };
 
 const ssr_config = {
     target: 'node',
-    entry: {
-        application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')]
+    devtool: false,
+    plugins: [
+        // dont split ssr asset in chunks
+        new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
+        // both for hot reloading
+        // new webpack.HotModuleReplacementPlugin(),
+        // watch for added files in opal dir
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new webpack.DefinePlugin({
+            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
+        })
+    ],
+    entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] },
+    module: {
+        rules: [
+            {
+                // loader for .scss files
+                // test means "test for for file endings"
+                test: /.scss$/,
+                use: [
+                    { loader: "style-loader" },
+                    {
+                        loader: "css-loader",
+                        options: { sourceMap: false }
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            includePaths: [path.resolve(__dirname, '../isomorfeus/styles')],
+                            sourceMap: false
+                        }
+                    }
+                ]
+            },
+            {
+                // loader for .css files
+                test: /.css$/,
+                use: [
+                    { loader: "style-loader" },
+                    {
+                        loader: "css-loader",
+                        options: { sourceMap: false }
+                    }
+                ]
+            },
+            {
+                test: /.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
+                use: [ "file-loader" ]
+            },
+            {
+                // opal-webpack-loader will compile and include ruby files in the pack
+                test: /.(rb|js.rb)$/,
+                use: [
+                    {
+                        loader: 'opal-webpack-loader',
+                        options: {
+                            sourceMap: false,
+                            hmr: false
+                        }
+                    }
+                ]
+            }
+        ]
     }
 };
 
@@ -150,8 +208,8 @@ const ssr_config = {
 //     }
 // };
 
-const browser = Object.assign({}, common_config, browser_config);
-const browser_debug_guide = Object.assign({}, common_config, browser_debug_guide_config);
+const browser = Object.assign({}, common_config, common_browser_config, browser_config);
+const browser_debug_guide = Object.assign({}, common_config, common_browser_config, browser_debug_guide_config);
 const ssr = Object.assign({}, common_config, ssr_config);
 // const web_worker = Object.assign({}, common_config, web_worker_config);
 

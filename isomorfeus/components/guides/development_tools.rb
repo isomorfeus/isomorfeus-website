@@ -1,4 +1,4 @@
-class Guides
+class Guides < LucidMaterial::Component::Base
   class DevelopmentTools < LucidMaterial::Component::Base
     styles do |theme|
       { heading: { color: theme.root.color }}
