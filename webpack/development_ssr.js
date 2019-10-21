@@ -5,7 +5,7 @@ const OwlResolver = require('opal-webpack-loader/resolver'); // to resolve ruby 
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // to watch for added ruby files
 
 const common_config = {
-    target: 'web',
+    target: 'node',
     context: path.resolve(__dirname, '../isomorfeus'),
     mode: "development",
     optimization: {
@@ -22,7 +22,7 @@ const common_config = {
         // webpack-dev-server keeps the output in memory
         filename: '[name].js',
         path: path.resolve(__dirname, '../public/assets'),
-        publicPath: 'http://localhost:3035/assets/'
+        publicPath: 'http://localhost:3036/assets/'
     },
     resolve: {
         plugins: [
@@ -31,13 +31,10 @@ const common_config = {
         ]
     },
     plugins: [
-        // hot reloading
-        new webpack.HotModuleReplacementPlugin(),
+        // dont split ssr asset in chunks
+        new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
         // watch for added files in opal dir
-        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
-        new webpack.DefinePlugin({
-            OPAL_DEVTOOLS_OBJECT_REGISTRY: true
-        })
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] })
     ],
     module: {
         rules: [
@@ -69,7 +66,7 @@ const common_config = {
                         loader: 'opal-webpack-loader',
                         options: {
                             sourceMap: false,
-                            hmr: true,
+                            hmr: false,
                             hmrHook: 'Opal.Isomorfeus.$force_render()'
                         }
                     }
@@ -80,9 +77,9 @@ const common_config = {
     // configuration for webpack-dev-server
     devServer: {
         open: false,
-        lazy: false,
-        port: 3035,
-        hot: true,
+        lazy: true,
+        port: 3036,
+        hot: false,
         inline: true,
         https: false,
         disableHostCheck: true,
@@ -102,21 +99,10 @@ const common_config = {
     }
 };
 
-const browser_config = {
-    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application_debug.js')] }
+const ssr_config = {
+    entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
 };
 
-const browser_debug_guide_config = {
-    entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] }
-};
+const ssr = Object.assign({}, common_config, ssr_config);
 
-// const web_worker_config = {
-//     target: 'webworker',
-//     entry: { web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')] }
-// };
-
-const browser = Object.assign({}, common_config, browser_config);
-const browser_debug_guide = Object.assign({}, common_config, browser_debug_guide_config);
-// const web_worker = Object.assign({}, common_config, web_worker_config);
-
-module.exports = [ browser, browser_debug_guide ];
+module.exports = ssr;
