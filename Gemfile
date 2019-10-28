@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'iodine', '~> 0.7.34'
+gem 'iodine', '~> 0.7.36'
 gem 'foreman', require: false
 
 gem 'roda', '~> 3.25.0'
