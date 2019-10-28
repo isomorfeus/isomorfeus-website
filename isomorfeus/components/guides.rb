@@ -6,7 +6,7 @@ class Guides < LucidMaterial::Component::Base
   end
 
   while_loading :except_ssr do
-    DIV 'Loading...'
+    DIV 'Loading Guides ...'
   end
 
   render do
