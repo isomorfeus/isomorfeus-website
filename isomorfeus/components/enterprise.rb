@@ -11,7 +11,7 @@ class Enterprise < LucidMaterial::Component::Base
 
   render do
     Enterprise::Header()
-    DIV 'Work in progress ... ...'
+    DIV 'Work in progress ...'
     NavigationLinks()
   end
 end
