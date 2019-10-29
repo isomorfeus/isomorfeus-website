@@ -21,6 +21,7 @@ class IsomorfeusWebsiteApp < Roda
         <head>
           <title>The Isomorfeus Project</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="icon" href="/favicon.png" type="image/png">
           <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
           #{owl_script_tag 'application.js'}
         </head>
@@ -53,6 +54,7 @@ class IsomorfeusWebsiteApp < Roda
           <head>
             <title>The Isomorfeus Project</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="icon" href="/favicon.png" type="image/png">
             <style id="jss-server-side" type="text/css">#{ssr_styles}</style>
             #{owl_script_tag 'application_debug_guide.js'}
           </head>
