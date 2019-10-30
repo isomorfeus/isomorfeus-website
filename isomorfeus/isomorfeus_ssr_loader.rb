@@ -15,6 +15,6 @@ require_tree 'data', :autoload_dirskip
 require_tree 'operations', :autoload_dirskip
 
 # autoload shared components
-require_tree 'components', :autoload_dirskip
+require_tree 'components'
 
 Isomorfeus.start_app!
