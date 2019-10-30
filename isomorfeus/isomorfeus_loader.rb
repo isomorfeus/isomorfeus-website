@@ -18,7 +18,7 @@ require_tree 'operations', :autoload_dirskip
 require_tree 'components/shared', :autoload_dirskip
 
 # require top level components directly
-require 'components/shared'
+require 'components/shared/app_bar'
 require 'components/logo'
 require 'components/not_found_404_component'
 require 'components/navigation_links'
