@@ -1,6 +1,14 @@
 class IsomorfeusWebsiteApp < LucidMaterial::App::Base
-  theme do
-    { root: { color: :black }}
+  theme do |default_theme|
+    default_theme.deep_merge(
+      { palette: { primary: { main: '#cccccc',
+                              light: '#ffffff',
+                              dark: '#9b9b9b',
+                              contrastText: '#3f3e36' },
+                 secondary: { main: '#0b6174',
+                              light: '#498fa3',
+                              dark: '#003748',
+                              contrastText: '#ffffff' }}})
   end
 
   render do
