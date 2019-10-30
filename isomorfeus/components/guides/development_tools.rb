@@ -1,7 +1,7 @@
 class Guides < LucidMaterial::Component::Base
   class DevelopmentTools < LucidMaterial::Component::Base
     styles do |theme|
-      { heading: { color: theme.root.color }}
+      { heading: { color: theme.palette.secondary.main }}
     end
 
     render do
