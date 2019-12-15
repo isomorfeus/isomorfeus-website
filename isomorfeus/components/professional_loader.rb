@@ -1,1 +1,2 @@
-require_tree 'professional', :autoload_dirskip
+require_tree 'professional', :autoload
+Isomorfeus.zeitwerk.set_autoloads_in_dir('components/professional', Professional)

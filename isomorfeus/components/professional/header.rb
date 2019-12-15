@@ -1,4 +1,4 @@
-class Professional < LucidMaterial::Component::Base
+module Professional
   class Header < LucidMaterial::Component::Base
     render do
       DIV "Professional"

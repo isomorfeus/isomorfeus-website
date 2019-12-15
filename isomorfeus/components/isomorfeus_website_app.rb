@@ -15,9 +15,9 @@ class IsomorfeusWebsiteApp < LucidMaterial::App::Base
     Router(location: props.location) do
       Switch do
         Route(path: '/', exact: true, component: WelcomeComponent.JS[:react_component])
-        Route(path: '/guides', component: Guides.JS[:react_component])
-        Route(path: '/interactive_docs', exact: true, component: InteractiveDocs.JS[:react_component])
-        Route(path: '/api_docs', exact: true, component: ApiDocs.JS[:react_component])
+        Route(path: '/guides', component: Guides::Main.JS[:react_component])
+        Route(path: '/interactive_docs', exact: true, component: InteractiveDocs::Main.JS[:react_component])
+        Route(path: '/api_docs', exact: true, component: ApiDocs::Main.JS[:react_component])
         Route(component: NotFound404Component.JS[:react_component])
       end
     end

@@ -35,23 +35,9 @@ class WelcomeComponent < LucidMaterial::Component::Base
       BR()
       H4 "Getting started:"
       PRE <<~TEXT
-        $ gem install isomorfeus-installer -v 1.0.0.zeta5
+        $ gem install isomorfeus -v 1.0.0.zeta6
         $ isomorfeus new my_project
         $ cd my_project
-        $ bundle install
-      TEXT
-      BR()
-      SPAN <<~TEXT
-        Because of recent improvements to isomorfeus-react for which the zeta5 configuration is not yet prepared,
-        please add the following line to your app, in the example above with a project name of 'my_project' in the file 'my_project_app.rb'
-        in the projects root directory. Add the line after the requires.
-      TEXT
-      BR()
-      PRE 'Isomorfeus.server_side_rendering = false if Isomorfeus.development?'
-      BR()
-      SPAN 'Then you can do:'
-      BR()
-      PRE <<~TEXT
         $ foreman start
       TEXT
       P do

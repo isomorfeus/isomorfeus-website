@@ -1,4 +1,4 @@
-class Enterprise < LucidMaterial::Component::Base
+module Enterprise
   class Header < LucidMaterial::Component::Base
     render do
       DIV "Enterprise"

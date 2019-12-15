@@ -1,4 +1,4 @@
-class Guides < LucidMaterial::Component::Base
+module Guides
   class Header < LucidMaterial::Component::Base
     render do
       DIV "Guides"

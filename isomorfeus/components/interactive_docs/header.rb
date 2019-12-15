@@ -1,4 +1,4 @@
-class InteractiveDocs < LucidMaterial::Component::Base
+module InteractiveDocs
   class Header < LucidMaterial::Component::Base
     render do
       DIV "Interactive Docs"

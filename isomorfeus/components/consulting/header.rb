@@ -1,4 +1,4 @@
-class Consulting < LucidMaterial::Component::Base
+module Consulting
   class Header < LucidMaterial::Component::Base
     render do
       DIV "Consulting"
