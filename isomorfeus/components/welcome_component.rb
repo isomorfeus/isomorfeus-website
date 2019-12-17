@@ -34,9 +34,8 @@ class WelcomeComponent < LucidMaterial::Component::Base
       TEXT
       BR()
       H4 "Getting started:"
-      P "Currently there is a issue with rubygems.org publishing the gems, please add gems.isomorfeus.com add gem source"
+
       PRE <<~TEXT
-        $ gem sources -a http://gems.isomorfeus.com
         $ gem install isomorfeus -v 1.0.0.zeta9
         $ isomorfeus new my_project
         $ cd my_project
