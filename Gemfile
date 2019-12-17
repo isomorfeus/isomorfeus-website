@@ -13,13 +13,15 @@ gem 'opal-activesupport', '~> 0.3.3'
 gem 'opal-webpack-loader', '>= 0.9.9'
 
 gem 'isomorfeus-redux', '~> 4.0.16'
-gem 'isomorfeus-react', '>= 16.12.1'
-gem 'isomorfeus-policy', '~> 1.0.0.zeta6'
-gem 'isomorfeus-transport', '~> 1.0.0.zeta6'
-gem 'isomorfeus-i18n', '~> 1.0.0.zeta6'
-gem 'isomorfeus-data', '~> 1.0.0.zeta6'
-gem 'isomorfeus-operation', '~> 1.0.0.zeta6'
-gem 'isomorfeus-speednode', '~> 0.2.11'
+gem 'isomorfeus-react', '>= 16.12.2'
+
+source "http://gems.isomorfeus.com" do
+  gem 'isomorfeus-policy', '~> 1.0.0.zeta8'
+  gem 'isomorfeus-transport', '~> 1.0.0.zeta8'
+  gem 'isomorfeus-i18n', '~> 1.0.0.zeta8'
+  gem 'isomorfeus-data', '~> 1.0.0.zeta8'
+  gem 'isomorfeus-operation', '~> 1.0.0.zeta8'
+end
 
 group :test do
   gem 'rspec', '~> 3.8.0'
