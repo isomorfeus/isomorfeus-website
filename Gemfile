@@ -16,11 +16,11 @@ gem 'isomorfeus-redux', '~> 4.0.16'
 gem 'isomorfeus-react', '>= 16.12.2'
 
 source "http://gems.isomorfeus.com" do
-  gem 'isomorfeus-policy', '~> 1.0.0.zeta8'
-  gem 'isomorfeus-transport', '~> 1.0.0.zeta8'
-  gem 'isomorfeus-i18n', '~> 1.0.0.zeta8'
-  gem 'isomorfeus-data', '~> 1.0.0.zeta8'
-  gem 'isomorfeus-operation', '~> 1.0.0.zeta8'
+  gem 'isomorfeus-policy', '~> 1.0.0.zeta9'
+  gem 'isomorfeus-transport', '~> 1.0.0.zeta9'
+  gem 'isomorfeus-i18n', '~> 1.0.0.zeta9'
+  gem 'isomorfeus-data', '~> 1.0.0.zeta9'
+  gem 'isomorfeus-operation', '~> 1.0.0.zeta9'
 end
 
 group :test do
