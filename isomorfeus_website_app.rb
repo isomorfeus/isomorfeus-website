@@ -16,7 +16,7 @@ class IsomorfeusWebsiteApp < Roda
     locale = env.http_accept_language.preferred_language_from(Isomorfeus.available_locales)
     locale = env.http_accept_language.compatible_language_from(Isomorfeus.available_locales) unless locale
     locale = Isomorfeus.locale unless locale
-    rendered_tree = mount_component('IsomorfeusWebsiteApp', location_host: env['HTTP_HOST'], location: location, locale: locale)
+    rendered_tree = cached_mount_component('IsomorfeusWebsiteApp', location_host: env['HTTP_HOST'], location: location, locale: locale)
     <<~HTML
       <!DOCTYPE html>
       <html>
