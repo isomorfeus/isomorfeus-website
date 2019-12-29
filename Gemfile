@@ -10,11 +10,10 @@ gem 'roda', '~> 3.25.0'
 
 gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
 gem 'opal-activesupport', '~> 0.3.3'
-gem 'opal-webpack-loader', '>= 0.9.9'
+gem 'opal-webpack-loader', '>= 0.9.10'
 
 gem 'isomorfeus-redux', '~> 4.0.16'
 gem 'isomorfeus-react', '>= 16.12.6'
-
 gem 'isomorfeus-policy', '~> 1.0.0.zeta11'
 gem 'isomorfeus-transport', '~> 1.0.0.zeta11'
 gem 'isomorfeus-i18n', '~> 1.0.0.zeta11'
