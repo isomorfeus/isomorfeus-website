@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-source "https://rubygems.pkg.github.com/isomorfeus"
+# source "https://rubygems.pkg.github.com/isomorfeus"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
