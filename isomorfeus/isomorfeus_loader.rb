@@ -9,10 +9,10 @@ require 'lucid_prop_declaration/mixin'
 require 'isomorfeus-data'
 require 'isomorfeus-operation'
 
-require_tree 'policies'
-require_tree 'channels'
-require_tree 'data'
-require_tree 'operations'
+require_tree 'policies', :autoload
+require_tree 'channels', :autoload
+require_tree 'data', :autoload
+require_tree 'operations', :autoload
 
 # autoload shared components
 require_tree 'components/shared', :autoload

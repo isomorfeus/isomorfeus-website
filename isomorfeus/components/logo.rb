@@ -1,4 +1,4 @@
-class Logo < React::MemoComponent::Base
+class Logo < React::Component::Base
   render do
     svg xmlns: "http://www.w3.org/2000/svg", width: props.size, height: props.size, viewBox: "0 0 602.56 602.56" do
       circle cx: "300.7", cy: "300.56", r: "252", fill: "#07adb8"
