@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'iodine', '~> 0.7.38'
 gem 'foreman', require: false
 
-gem 'roda', '~> 3.25.0'
+gem 'roda', '~> 3.27.0'
 
 gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
 gem 'opal-activesupport', '~> 0.3.3'
@@ -19,6 +19,13 @@ gem 'isomorfeus-transport', '~> 1.0.0.zeta11'
 gem 'isomorfeus-i18n', '~> 1.0.0.zeta11'
 gem 'isomorfeus-data', '~> 1.0.0.zeta11'
 gem 'isomorfeus-operation', '~> 1.0.0.zeta11'
+
+group :development do
+  gem 'pry', '~> 0.12.2'
+  gem 'pry-nav'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+end
 
 group :test do
   gem 'rspec', '~> 3.8.0'
