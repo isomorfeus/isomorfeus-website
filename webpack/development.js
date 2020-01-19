@@ -48,7 +48,7 @@ const common_config = {
                 use: [ "style-loader", "css-loader",
                     {
                         loader: "sass-loader",
-                        options: { includePaths: [path.resolve(__dirname, '../isomorfeus/styles')] }
+                        options: { includePaths: [path.resolve(__dirname, '../app/styles')] }
                     }
                 ]
             },
@@ -103,16 +103,16 @@ const common_config = {
 };
 
 const browser_config = {
-    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application_debug.js')] }
+    entry: { application: [path.resolve(__dirname, '../app/imports/application_debug.js')] }
 };
 
 const browser_debug_guide_config = {
-    entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] }
+    entry: { application_debug_guide: [path.resolve(__dirname, '../app/imports/application_debug_guide.js')] }
 };
 
 // const web_worker_config = {
 //     target: 'webworker',
-//     entry: { web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')] }
+//     entry: { web_worker: [path.resolve(__dirname, '../app/imports/application_web_worker.js')] }
 // };
 
 const browser = Object.assign({}, common_config, browser_config);

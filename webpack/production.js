@@ -42,7 +42,7 @@ const common_config = {
                     {
                         loader: "sass-loader",
                         options: {
-                            includePath: [path.resolve(__dirname, '../isomorfeus/styles')],
+                            includePath: [path.resolve(__dirname, '../app/styles')],
                             sourceMap: false // set to false to speed up hot reloads
                         }
                     }
@@ -81,7 +81,7 @@ const browser_config = {
         minimizer: [new TerserPlugin({ parallel: true, cache: true, sourceMap: false, terserOptions: { output: { comments: false }}})],
         // splitChunks: { chunks: 'all' }
     },
-    entry: { application: [path.resolve(__dirname, '../isomorfeus/imports/application.js')] }
+    entry: { application: [path.resolve(__dirname, '../app/imports/application.js')] }
 };
 
 const browser_debug_guide_config = {
@@ -100,7 +100,7 @@ const browser_debug_guide_config = {
             OPAL_DEVTOOLS_OBJECT_REGISTRY: true
         })
     ],
-    entry: { application_debug_guide: [path.resolve(__dirname, '../isomorfeus/imports/application_debug_guide.js')] },
+    entry: { application_debug_guide: [path.resolve(__dirname, '../app/imports/application_debug_guide.js')] },
     module: {
         rules: [
             {
@@ -117,7 +117,7 @@ const browser_debug_guide_config = {
                     {
                         loader: "sass-loader",
                         options: {
-                            includePath: [path.resolve(__dirname, '../isomorfeus/styles')],
+                            includePath: [path.resolve(__dirname, '../app/styles')],
                             sourceMap: false // set to false to speed up hot reloads
                         }
                     }
@@ -155,12 +155,12 @@ const ssr_config = {
         minimize: true, // minimize
         minimizer: [new TerserPlugin({ parallel: true, cache: true, sourceMap: false, terserOptions: { output: { comments: false }}})]
     },
-    entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
+    entry: { application_ssr: [path.resolve(__dirname, '../app/imports/application_ssr.js')] }
 };
 
 // const web_worker_config = {
 //     target: 'webworker',
-//     entry: { web_worker: [path.resolve(__dirname, '../isomorfeus/imports/application_web_worker.js')] }
+//     entry: { web_worker: [path.resolve(__dirname, '../app/imports/application_web_worker.js')] }
 // };
 
 const browser = Object.assign({}, common_config, browser_config);

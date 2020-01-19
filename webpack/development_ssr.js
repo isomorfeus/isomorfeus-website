@@ -45,7 +45,7 @@ const common_config = {
                 use: [ "style-loader", "css-loader",
                     {
                         loader: "sass-loader",
-                        options: { includePaths: [path.resolve(__dirname, '../isomorfeus/styles')] }
+                        options: { includePaths: [path.resolve(__dirname, '../app/styles')] }
                     }
                 ]
             },
@@ -100,7 +100,7 @@ const common_config = {
 };
 
 const ssr_config = {
-    entry: { application_ssr: [path.resolve(__dirname, '../isomorfeus/imports/application_ssr.js')] }
+    entry: { application_ssr: [path.resolve(__dirname, '../app/imports/application_ssr.js')] }
 };
 
 const ssr = Object.assign({}, common_config, ssr_config);

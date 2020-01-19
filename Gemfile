@@ -9,16 +9,8 @@ gem 'foreman', require: false
 gem 'roda', '~> 3.27.0'
 
 gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
-gem 'opal-activesupport', '~> 0.3.3'
-gem 'opal-webpack-loader', '>= 0.9.10'
 
-gem 'isomorfeus-redux', '~> 4.0.16'
-gem 'isomorfeus-react', '>= 16.12.6'
-gem 'isomorfeus-policy', '~> 1.0.0.zeta11'
-gem 'isomorfeus-transport', '~> 1.0.0.zeta11'
-gem 'isomorfeus-i18n', '~> 1.0.0.zeta11'
-gem 'isomorfeus-data', '~> 1.0.0.zeta11'
-gem 'isomorfeus-operation', '~> 1.0.0.zeta11'
+gem 'isomorfeus', '~> 1.0.0.zeta12'
 
 group :development do
   gem 'pry', '~> 0.12.2'
@@ -29,5 +21,5 @@ end
 
 group :test do
   gem 'rspec', '~> 3.8.0'
-  gem 'isomorfeus-puppetmaster', '~> 0.3.0'
+  gem 'isomorfeus-puppetmaster', '~> 0.3.4'
 end
