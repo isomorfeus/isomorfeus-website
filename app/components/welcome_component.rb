@@ -48,7 +48,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
         BR()
         SPAN "Open editor, components are in my_project/app/components, and start coding!"
         BR()
-        SPAN "(For foreman: gem install foreman.)"
+        SPAN "(For foreman: gem install foreman)"
       end
       P do
         SPAN "See available "; Link(to: '/guides/development_tools') { 'Development Tools' }
