@@ -55,7 +55,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
       end
       P do
         SPAN { A(href: "/debug_guide", rel: "nofollow") { "A Debug Guide" }}
-        SPAN " (not finished yet, but good page to try all features of Opal Developer Tools) (Loads large assets, source maps, etc.)"
+        SPAN "(not finished yet, but good page to try all features of Opal Developer Tools) (Loads large assets, source maps, etc.)"
       end
       NavigationLinks()
     end
