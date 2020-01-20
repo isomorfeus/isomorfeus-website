@@ -6,7 +6,7 @@ const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // to wat
 
 const common_config = {
     target: 'web',
-    context: path.resolve(__dirname, '../isomorfeus'),
+    context: path.resolve(__dirname, '../app'),
     mode: "development",
     optimization: {
         removeAvailableModules: false,
@@ -34,7 +34,7 @@ const common_config = {
         // hot reloading
         new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
-        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../app') ] }),
         new webpack.DefinePlugin({
             OPAL_DEVTOOLS_OBJECT_REGISTRY: true
         })

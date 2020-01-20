@@ -6,7 +6,7 @@ const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin'); // to wat
 
 const common_config = {
     target: 'node',
-    context: path.resolve(__dirname, '../isomorfeus'),
+    context: path.resolve(__dirname, '../app'),
     mode: "development",
     optimization: {
         removeAvailableModules: false,
@@ -34,7 +34,7 @@ const common_config = {
         // dont split ssr asset in chunks
         new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
         // watch for added files in opal dir
-        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] })
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../app') ] })
     ],
     module: {
         rules: [

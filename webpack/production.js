@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 const common_config = {
-    context: path.resolve(__dirname, '../isomorfeus'),
+    context: path.resolve(__dirname, '../app'),
     mode: "production",
     performance: {
         maxAssetSize: 20000000,

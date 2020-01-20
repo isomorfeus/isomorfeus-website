@@ -10,7 +10,7 @@ const common_config = {
     // devtool: 'cheap-eval-source-map', // less accurate
     // devtool: 'inline-source-map', // slowest
     // devtool: 'inline-cheap-source-map',
-    context: path.resolve(__dirname, '../isomorfeus'),
+    context: path.resolve(__dirname, '../app'),
     mode: "development",
     optimization: {
         removeAvailableModules: false,
@@ -38,7 +38,7 @@ const common_config = {
         // hot reloading
         new webpack.HotModuleReplacementPlugin(),
         // watch for added files in opal dir
-        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../isomorfeus') ] }),
+        new ExtraWatchWebpackPlugin({ dirs: [ path.resolve(__dirname, '../app') ] }),
         new webpack.DefinePlugin({
             OPAL_DEVTOOLS_OBJECT_REGISTRY: true
         })
