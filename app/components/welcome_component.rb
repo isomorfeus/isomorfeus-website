@@ -36,7 +36,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
       H4 "Getting started:"
 
       PRE <<~TEXT
-        $ gem install isomorfeus -v 1.0.0.zeta12
+        $ gem install isomorfeus -v 1.0.0.zeta19
         $ isomorfeus new my_project
         $ cd my_project
         $ foreman start -f ProcfileDev
