@@ -99,6 +99,7 @@ const common_config = {
     devServer: {
         open: false,
         lazy: false,
+        host: '0.0.0.0',
         port: 3035,
         hot: true,
         // hotOnly: true,
