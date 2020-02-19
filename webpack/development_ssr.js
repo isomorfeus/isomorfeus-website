@@ -77,7 +77,7 @@ const common_config = {
     // configuration for webpack-dev-server
     devServer: {
         open: false,
-        lazy: true,
+        lazy: false,
         port: 3036,
         hot: false,
         inline: true,
