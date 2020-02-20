@@ -10,9 +10,14 @@ global.NavLink = NavLink;
 global.Route = Route;
 global.Switch = Switch;
 
+import ReactMarkdown from 'react-markdown';
+global.ReactMarkdown = ReactMarkdown;
+
 import * as Mui from '@material-ui/core';
-import * as MuiStyles from '@material-ui/styles';
 global.Mui = Mui;
+import * as MuiStyles from '@material-ui/styles';
 global.MuiStyles = MuiStyles;
+import * as MuiIcons from '@material-ui/icons';
+global.MuiIcons = MuiIcons;
 
 if (module.hot) { module.hot.accept(); }

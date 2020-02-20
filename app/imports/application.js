@@ -9,6 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 // global.History = History;
 global.Router = BrowserRouter;
 
+import 'typeface-questrial';
+
 // import modules common to browser and server side rendering (ssr)
 // environments from application_common.js
 import './application_common.js';

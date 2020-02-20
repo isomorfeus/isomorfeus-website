@@ -10,6 +10,10 @@ import WebSocket from 'ws';
 global.WebSocket = WebSocket;
 // import modules common to browser and server side rendering (ssr)
 // environments from application_common.js
+
+// hack for ReactMArkdown
+process.cwd = function() { return ''; }
+
 import './application_common.js';
 
 import init_app from 'isomorfeus_ssr_loader.rb';
