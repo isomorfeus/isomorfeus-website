@@ -2,7 +2,7 @@ class Document < LucidData::Document::Base
   BASE_PATH = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..'))
   TWO_PATHS = %w[isomorfeus-project isomorfeus-react isomorfeus-redux opal-webpack-loader arango-driver opal-zeitwerk]
   MODULE_PATHS = %w[isomorfeus isomorfeus-data isomorfeus-i18n isomorfeus-mailer isomorfeus-operation isomorfeus-policy isomorfeus-transport]
-  HAS_RUBY_DIR = %w[isomorfeus-project isomorfeus-react isomorfeus-redux isomorfeus-react isomorfeus-redux]
+  HAS_RUBY_DIR = %w[isomorfeus-project isomorfeus-react isomorfeus-redux isomorfeus-react isomorfeus-redux isomorfeus-speednode]
 
   attribute :markdown
 
