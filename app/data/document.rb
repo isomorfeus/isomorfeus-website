@@ -33,7 +33,7 @@ class Document < LucidData::Document::Base
 
     if mod
       repo_dir = 'isomorfeus-project'
-      mod_path = MODULE_PATHS.detect { |path| path.include?(repo) }
+      mod_path = MODULE_PATHS.detect { |path| path.include?(mod) }
     else
       repo_dir = TWO_PATHS.detect { |path| path.include?(repo) }
     end
@@ -48,8 +48,6 @@ class Document < LucidData::Document::Base
 
     raise "no such document #{filename}" unless File.exist?(filename)
 
-    markdown = File.read(filename)
-
-    self.new(key: key, attributes: { markdown: markdown })
+    self.new(key: key, attributes: { markdown: File.read(filename) })
   end
 end
