@@ -17,7 +17,7 @@ class LayoutComponent < LucidMaterial::Component::Base
         rre(React.create_element(component, **props_h)) # DirectX
       end
       Mui.Container(class_name: styles.footer, max_width: false) do
-        Footer()
+        # Footer()
       end
     end
 
