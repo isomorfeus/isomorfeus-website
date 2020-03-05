@@ -1,13 +1,16 @@
 class Header < LucidMaterial::Component::Base
   styles do |theme|
     {
+      appbar: {
+        backgroundColor: theme.palette.green.main
+      },
       grow: {
         flexGrow: 1
       }
     }
   end
   render do
-    Mui.AppBar(position: "fixed", color:"inherit") do
+    Mui.AppBar(position: "fixed", color:"inherit", class_name: styles.appbar) do
       Mui.Toolbar(id: 'app-header') do
         # NavigationMobile()
         DIV(class: styles.grow) {}
