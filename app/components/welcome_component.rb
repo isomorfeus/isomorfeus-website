@@ -7,7 +7,7 @@ class WelcomeComponent < LucidMaterial::Component::Base
 
   component_did_mount do
     # temporary, need to add it to Kernel
-    Isomorfeus::Transport.delay(5000) do
+    after(5000) do
       state.power = :iso
     end
   end

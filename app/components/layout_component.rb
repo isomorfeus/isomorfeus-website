@@ -11,11 +11,15 @@ class LayoutComponent < LucidMaterial::Component::Base
     component ||= Isomorfeus.cached_component_class(props.compo)
     props_h = props.to_h
     props_h.delete(:compo)
-    Mui.Container(class_name: styles.container, max_width: false) do
-      rre(React.create_element(component, **props_h)) # DirectX
+    DIV() do
+      Header()
+      Mui.Container(component: 'main', class_name: "main #{styles.container}") do
+        rre(React.create_element(component, **props_h)) # DirectX
+      end
+      Mui.Container(class_name: styles.footer, max_width: false) do
+        Footer()
+      end
     end
-    Mui.Container(class_name: styles.footer, max_width: false) do
-      Footer()
-    end
+
   end
 end
