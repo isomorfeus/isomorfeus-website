@@ -2,7 +2,7 @@ class Header < LucidMaterial::Component::Base
   styles do |theme|
     {
       appbar: {
-        backgroundColor: theme.palette.green.main
+        backgroundColor: theme.palette.info.main
       },
       grow: {
         flexGrow: 1
