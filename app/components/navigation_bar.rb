@@ -10,7 +10,7 @@ class NavigationBar < LucidMaterial::Component::Base
       padding: '0 30px',
       boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     },
-      label: {
+    label: {
       textTransform: 'capitalize',
     }
   }
@@ -26,7 +26,7 @@ class NavigationBar < LucidMaterial::Component::Base
 
   render do
     Mui.Box(display: `{ xs: 'none', lg: 'block' }`) do
-      NAV(class: styles.nav) do
+      NAV(class_name: styles.nav) do
         Mui.Button(class_name: styles.button_style, color: 'secondary', variant: 'contained', component: `Opal.global.Link`, to: '/docs') {"Documentation"}
         Mui.Button(color: 'secondary', variant: 'contained', component: 'span', href: 'https://twitter.com/isomorfeus') {MuiIcons.Twitter}
         Mui.Button(color: 'secondary', variant: 'contained', component: 'span', href: 'https://github.com/isomorfeus') {MuiIcons.GitHub}
