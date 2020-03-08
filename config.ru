@@ -1,13 +1,11 @@
-if ENV['RACK_ENV'] && ENV['RACK_ENV'] != 'development'
-  require_relative 'isomorfeus_website_app'
+require_relative 'app_loader'
 
+if ENV['RACK_ENV'] && ENV['RACK_ENV'] != 'development'
   Isomorfeus.zeitwerk.setup
   Isomorfeus.zeitwerk.eager_load
 
   run IsomorfeusWebsiteApp.app
 else
-  require_relative 'isomorfeus_website_app'
-
   Isomorfeus.zeitwerk.enable_reloading
   Isomorfeus.zeitwerk.setup
   Isomorfeus.zeitwerk.eager_load
