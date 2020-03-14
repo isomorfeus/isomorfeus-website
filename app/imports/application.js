@@ -9,6 +9,9 @@ import { BrowserRouter } from 'react-router-dom';
 // global.History = History;
 global.Router = BrowserRouter;
 
+import deepForceUpdate from 'react-deep-force-update'
+global.deepForceUpdate = deepForceUpdate;
+
 import 'typeface-questrial';
 
 // import modules common to browser and server side rendering (ssr)
